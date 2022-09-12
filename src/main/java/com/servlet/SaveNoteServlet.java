@@ -15,7 +15,6 @@ import org.hibernate.Transaction;
 import com.entities.NoteConfig;
 import com.factoryHelper.FactoryProvider;
 
-
 /**
  * Servlet implementation class SaveNoteServlet
  */
@@ -53,20 +52,23 @@ public class SaveNoteServlet extends HttpServlet {
 
 				Session session = FactoryProvider.getInstance().openSession();
 				Transaction transaction = session.beginTransaction();
-				
+
 				session.save(noteConfig);
-				
+
 				transaction.commit();
 				session.close();
+
+				response.sendRedirect("notesuccess.jsp");
+
 //				FactoryProvider.closeFactory();
 
 			} else {
-				out.println("<h1>Something went wrong please check and try again.</h1>");
+				response.sendError(500);
 			}
 
 		} catch (Exception e) {
-
 			e.printStackTrace();
+			response.sendError(500);
 		}
 	}
 

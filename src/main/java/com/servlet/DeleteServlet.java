@@ -38,7 +38,7 @@ public class DeleteServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-			
+
 //			out.println("<script>");
 //			out.println("alert('Are you sure want to delete');");
 //			out.println("</script>");
@@ -60,7 +60,8 @@ public class DeleteServlet extends HttpServlet {
 			response.sendRedirect("showNote.jsp");
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+			response.sendError(500);
 		}
 	}
 }

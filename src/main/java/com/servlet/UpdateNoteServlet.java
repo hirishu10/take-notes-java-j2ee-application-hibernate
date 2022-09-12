@@ -49,7 +49,8 @@ public class UpdateNoteServlet extends HttpServlet {
 
 				Session session = FactoryProvider.getInstance().openSession();
 
-				NoteConfig newNoteConfig = session.get(NoteConfig.class, noteId);// Get old data and then change the data
+				NoteConfig newNoteConfig = session.get(NoteConfig.class, noteId);// Get old data and then change the
+																					// data
 				newNoteConfig.setNoteTitle(nTitle);
 				newNoteConfig.setNoteDesc(nDescription);
 				newNoteConfig.setCreateDate(new Date());
@@ -60,18 +61,19 @@ public class UpdateNoteServlet extends HttpServlet {
 
 				transaction.commit();
 				session.close();
-				
+
 				response.sendRedirect("showNote.jsp");
-				
+
 //				FactoryProvider.closeFactory();
 
 			} else {
-				out.println("<h1>Something went wrong please check and try again.</h1>");
+				response.sendError(500);
 			}
 
 		} catch (Exception e) {
 
 			e.printStackTrace();
+			response.sendError(500);
 		}
 	}
 

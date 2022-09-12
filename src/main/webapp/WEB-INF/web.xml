@@ -3,35 +3,69 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>SaveNoteServlet</servlet-name>
-  	<display-name>SaveNoteServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.servlet.SaveNoteServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>DeleteServlet</servlet-name>
-  	<display-name>DeleteServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.servlet.DeleteServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>UpdateNoteServlet</servlet-name>
-  	<display-name>UpdateNoteServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.servlet.UpdateNoteServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>SaveNoteServlet</servlet-name>
-  	<url-pattern>/SaveNoteServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>DeleteServlet</servlet-name>
-  	<url-pattern>/DeleteServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>UpdateNoteServlet</servlet-name>
-  	<url-pattern>/UpdateNoteServlet</url-pattern>
-  </servlet-mapping>
+	<display-name>Archetype Created Web Application</display-name>
+
+
+
+	<servlet>
+		<servlet-name>SaveNoteServlet</servlet-name>
+		<display-name>SaveNoteServlet</display-name>
+		<description></description>
+		<servlet-class>com.servlet.SaveNoteServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeleteServlet</servlet-name>
+		<display-name>DeleteServlet</display-name>
+		<description></description>
+		<servlet-class>com.servlet.DeleteServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpdateNoteServlet</servlet-name>
+		<display-name>UpdateNoteServlet</display-name>
+		<description></description>
+		<servlet-class>com.servlet.UpdateNoteServlet</servlet-class>
+	</servlet>
+
+	<!-- Removing JSP extension -->
+
+	<servlet>
+		<servlet-name>Error</servlet-name>
+		<jsp-file>error.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SaveNoteServlet</servlet-name>
+		<url-pattern>/SaveNoteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteServlet</servlet-name>
+		<url-pattern>/DeleteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateNoteServlet</servlet-name>
+		<url-pattern>/UpdateNoteServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Removing JSP extension -->
+	<servlet-mapping>
+		<servlet-name>Error</servlet-name>
+		<url-pattern>/error</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- Error Handling -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/pagenotfound.jsp</location>
+	</error-page>
+
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error.jsp</location>
+	</error-page>
+
+
+
 </web-app>
