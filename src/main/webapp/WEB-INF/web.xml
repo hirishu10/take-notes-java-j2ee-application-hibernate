@@ -5,8 +5,6 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 
-
-
 	<servlet>
 		<servlet-name>SaveNoteServlet</servlet-name>
 		<display-name>SaveNoteServlet</display-name>
@@ -26,13 +24,24 @@
 		<servlet-class>com.servlet.UpdateNoteServlet</servlet-class>
 	</servlet>
 
-	<!-- Removing JSP extension -->
-
+	<!-- Removing JSP extension Working -->
 	<servlet>
 		<servlet-name>Error</servlet-name>
-		<jsp-file>error.jsp</jsp-file>
+		<jsp-file>/error.jsp</jsp-file>
 	</servlet>
 
+	<servlet>
+		<servlet-name>AddNote</servlet-name>
+		<jsp-file>/addNote.jsp</jsp-file>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ShowNote</servlet-name>
+		<jsp-file>/showNote.jsp</jsp-file>
+	</servlet>
+
+
+	<!-- Servlet Mapping -->
 	<servlet-mapping>
 		<servlet-name>SaveNoteServlet</servlet-name>
 		<url-pattern>/SaveNoteServlet</url-pattern>
@@ -46,10 +55,20 @@
 		<url-pattern>/UpdateNoteServlet</url-pattern>
 	</servlet-mapping>
 
-	<!-- Removing JSP extension -->
+	<!-- Removing JSP extension working -->
 	<servlet-mapping>
 		<servlet-name>Error</servlet-name>
 		<url-pattern>/error</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddNote</servlet-name>
+		<url-pattern>/addNote</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ShowNote</servlet-name>
+		<url-pattern>/showNote</url-pattern>
 	</servlet-mapping>
 
 

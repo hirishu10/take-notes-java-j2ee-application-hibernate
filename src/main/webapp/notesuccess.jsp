@@ -5,7 +5,7 @@
 <head>
 
 
-<%@include file="allMeta_JS_CSS.jsp"%>
+<%@include file="./Components/AllMeta_JS_CSS.jsp"%>
 
 
 <title>Success</title>
@@ -13,7 +13,7 @@
 <body>
 
 	<div class="">
-		<%@include file="NavComp.jsp"%>
+		<%@include file="./Components/NavComp.jsp"%>
 	</div>
 
 
@@ -35,7 +35,7 @@
 
 	<!-- Footer -->
 	<div class="">
-		<%@include file="FooterComp.jsp"%>
+		<%@include file="./Components/FooterComp.jsp"%>
 	</div>
 
 
